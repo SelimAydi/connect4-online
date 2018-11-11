@@ -1,7 +1,6 @@
 import turtle
 from socket import *
 import threading
-import Connect4Game
 import pickle
 import config
 import keyboard  # Using module keyboard
