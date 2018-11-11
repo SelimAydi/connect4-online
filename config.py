@@ -1,4 +1,4 @@
 class Config:
     def __init__(self):
-        self.host = '95.179.180.184'
+        self.host = '199.247.8.9'
         self.port = 8000
