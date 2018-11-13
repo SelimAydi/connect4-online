@@ -3,11 +3,11 @@ from socket import *
 import threading
 import pickle
 import config
-import keyboard  # Using module keyboard
 
 request_lock = threading.Lock()
 
 config = config.Config()
+
 
 class Client:
     def __init__(self, host, port):
@@ -29,7 +29,7 @@ class Client:
         self.window = turtle.Screen()
         self.window.bgcolor("lightgrey")
         self.pen.speed(0)
-        self.myPen._tracer(8, 25)
+        self.pen._tracer(8, 25)
 
         self.connect4_cell_list = []
         self.players = []
@@ -178,9 +178,9 @@ class Client:
             self.pen.right(90)
         self.pen.end_fill()
         self.pen.up()
-        self.myPen.color("black")
-        self.myPen.goto(-150, 250)
-        self.myPen.write("CONNECT 4", True, align="center", font=("Arial", 40, "bold"))
+        self.pen.color("black")
+        self.pen.goto(-150, 250)
+        self.pen.write("CONNECT 4", True, align="center", font=("Arial", 40, "bold"))
 
     def check_if_winner(self, grid, color):
         # Vertical row checking
@@ -269,7 +269,7 @@ class Client:
             # Column full
             while self.connect4_cell_list[0][column_minus] != 0:
                 user_input = self.window.numinput("Your turn", "Pick other column number row is full:", 1, minval=1,
-                                             maxval=7)
+                                                  maxval=7)
                 chosen_cell = int(user_input)
                 column_minus = chosen_cell - 1
 
