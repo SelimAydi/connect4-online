@@ -194,6 +194,12 @@ class Client:
             for z in range(4):
                 if grid[i][z] == color and grid[i + 1][z + 1] == color and grid[i + 2][z + 2] == color and grid[i + 3][z + 3] == color:
                     return color
+
+        #diagonal checking
+        for d in range(5,2,-1):
+            for c in range(4):
+                if grid[d][c] == color and grid[d-1][c+1] == color and grid[d-2][c+2] == color and grid[d-3][c+3] == color:
+                    return color
         return 0
 
     def winner_screen(self, winner):
