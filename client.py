@@ -29,6 +29,7 @@ class Client:
         self.window = turtle.Screen()
         self.window.bgcolor("lightgrey")
         self.pen.speed(0)
+        self.myPen._tracer(8, 25)
 
         self.connect4_cell_list = []
         self.players = []
@@ -177,6 +178,9 @@ class Client:
             self.pen.right(90)
         self.pen.end_fill()
         self.pen.up()
+        self.myPen.color("black")
+        self.myPen.goto(-150, 250)
+        self.myPen.write("CONNECT 4", True, align="center", font=("Arial", 40, "bold"))
 
     def check_if_winner(self, grid, color):
         # Vertical row checking
@@ -208,7 +212,7 @@ class Client:
         self.pen.penup()
         self.pen.color("black")
         self.pen.goto(200, 150)
-        self.pen.write("{} WINS".format(winner), True, align="center")
+        self.pen.write("{} WINS".format(winner), True, align="center", font=("Arial", 20, "bold"))
         self.pen.getscreen().update()
 
         print(self.connect4_cell_list)
